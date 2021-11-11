@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css"/>
+    <title>My Reading List</title>
+</head>
+<body>
+    <header>
+        <h1>My Reading List</h1>
+    </header>
+    <main id="main">
+        <section>
+            <h2>Add a new book to my reading list</h2>
+            <p>All the fields in this form are mandatory</p>
+            <form id="addBooksForm">
+                <label for="bookTitle">Book title: </label>
+                <input id="bookTitle" type="text" required name="book-title"/>
+                <div class="form-error" id="book-titleError"></div>
+
+                <label for="isbnNumber">ISBN number: </label>
+                <input id="isbnNumber" type="number" required name="isbn-number"/>
+                <div class="form-error" id="isbn-numberError"></div>
+
+                <fieldset>
+                    <legend>Do I have the book in my possession?</legend>
+                    <label for="inMyPossession">Yes</label>
+                    <input id="inMyPossession" type="radio" required name="in-my-possession" value="Yes"/>
+                    <label for="notInMyPossession">No</label>
+                    <input id="notInMyPossession" type="radio" required name="in-my-possession" value="No"/>
+                    <div class="form-error" id="in-my-possessionError"></div>
+                </fieldset>
+
+                <button type="submit">Add book to the list</button>
+            </form>
+        </section>
+
+        <section >
+            <h2 class="screenreaderOnly">Books I want to read</h2>
+            <div id=myReadingList></div>
+        </section>
+    </main>
+</body>
+<script type="module" src="js/index.js"></script>
+</html>
